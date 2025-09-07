@@ -5,22 +5,27 @@ const contador = document.getElementById("contador");
 
 function actualizarContador() {
   const ahora = new Date();
-  let diferencia = ahora - fechaInicio; // milisegundos
+  let años = ahora.getFullYear() - fechaInicio.getFullYear();
+  let meses = ahora.getMonth() - fechaInicio.getMonth();
+  let dias = ahora.getDate() - fechaInicio.getDate();
+  let horas = ahora.getHours() - fechaInicio.getHours();
+  let minutos = ahora.getMinutes() - fechaInicio.getMinutes();
+  let segundos = ahora.getSeconds() - fechaInicio.getSeconds();
 
-  // Convertimos
-  const segundosTotales = Math.floor(diferencia / 1000);
-  const minutosTotales = Math.floor(segundosTotales / 60);
-  const horasTotales = Math.floor(minutosTotales / 60);
-  const diasTotales = Math.floor(horasTotales / 24);
+  if (segundos < 0) { segundos += 60; minutos--; }
+  if (minutos < 0) { minutos += 60; horas--; }
+  if (horas < 0) { horas += 24; dias--; }
+  if (dias < 0) {
+    const ultimoMes = new Date(ahora.getFullYear(), ahora.getMonth(), 0).getDate();
+    dias += ultimoMes;
+    meses--;
+  }
+  if (meses < 0) { meses += 12; años--; }
 
-  const años = Math.floor(diasTotales / 365); // aproximado (sin bisiestos)
-  const dias = diasTotales % 365;
-  const horas = horasTotales % 24;
-  const minutos = minutosTotales % 60;
-  const segundos = segundosTotales % 60;
+
 
   contador.innerHTML = 
-    `Llevamos juntos 💕 ${años} años, ${dias} días, ${horas}h ${minutos}m ${segundos}s 💕`;
+    `Llevamos juntos 💕 ${años} años,${meses} meses, ${dias} días, ${horas}h ${minutos}m ${segundos}s 💕`;
 }
 
 // Actualiza cada segundo
