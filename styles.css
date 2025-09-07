@@ -1,0 +1,227 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+    color: #333;
+    text-align: center;
+    overflow-x: hidden;
+  }
+  
+  header {
+    padding: 50px 20px;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(6px);
+  }
+  
+  header h1 {
+    font-size: 2.5rem;
+    color: #c62828;
+  }
+  
+  section {
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: auto;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .gallery img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 20px;
+    margin: 10px;
+    transition: transform 0.3s;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  }
+  
+  .gallery img:hover {
+    transform: scale(1.05);
+  }
+  
+  .timeline {
+    text-align: left;
+    background: rgba(255,255,255,0.7);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+  }
+  
+  .timeline p {
+    margin: 10px 0;
+    font-size: 1.1rem;
+  }
+  
+  .contador {
+    background: rgba(255,255,255,0.8);
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 20px;
+    font-size: 1.3rem;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+  }
+  
+  footer {
+    margin-top: 40px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    font-size: 0.9rem;
+    position: relative;
+    z-index: 2;
+  }
+  
+  /* Corazones */
+  .heart {
+    position: fixed;
+    top: -10px;
+    font-size: 24px;
+    color: red;
+    animation: fall linear forwards;
+    z-index: 1;
+    pointer-events: none;
+  }
+  
+  @keyframes fall {
+    to {
+      transform: translateY(110vh);
+      opacity: 0;
+    }
+  }
+
+  /* Fondo oscuro cuando se abre la carta */
+.modal {
+    display: none; /* oculto por defecto */
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Caja de la carta */
+  .contenido-carta {
+    position: relative;
+    width: 80%;
+    max-width: 500px;
+    min-height: 300px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    color: white;
+    font-size: 1.2rem;
+    text-align: center;
+    animation: aparecer 0.5s ease;
+  }
+  
+  /* Texto dentro de la carta */
+  .texto-carta {
+    background: rgba(0,0,0,0.5);
+    padding: 15px;
+    border-radius: 10px;
+  }
+  
+  /* Botón cerrar (X) */
+  .cerrar {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+  }
+  
+  /* Animación */
+  @keyframes aparecer {
+    from {transform: scale(0.8); opacity: 0;}
+    to {transform: scale(1); opacity: 1;}
+  }
+  
+  /* Fuentes románticas */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Roboto&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  color: #333;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+/* Encabezado */
+header h1 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2.3rem;
+  color: #d81b60;
+  animation: aparecer 1.5s ease;
+}
+
+header p {
+  font-style: italic;
+  opacity: 0.8;
+}
+
+/* Secciones */
+section {
+  padding: 30px 15px;
+  margin: 20px auto;
+  max-width: 900px;
+}
+
+/* Caja estilo tarjeta */
+.timeline {
+  text-align: left;
+  background: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  animation: slideUp 1s ease;
+}
+
+.timeline p {
+  margin: 12px 0;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Galería mejorada */
+.gallery {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto; /* carrusel deslizable */
+  padding: 10px;
+}
+
+.gallery img {
+  min-width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  transition: transform 0.4s;
+}
+
+.gallery img:hover {
+  transform: scale(1.1) rotate(-2deg);
+}
+
+/* Animaciones */
+@keyframes aparecer {
+  from {opacity: 0; transform: translateY(-20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+@keyframes slideUp {
+  from {opacity: 0; transform: translateY(30px);}
+  to {opacity: 1; transform: translateY(0);}
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Para mi Amor 💖</title>
+  <!-- Conectamos CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header>
+    <h1>💖 Para la persona más especial de mi vida 💖</h1>
+    <p>"Cada día contigo es mi mejor historia"</p>
+  </header>
+
+  <section>
+    <h2>Razones por las que Te Amo 💕</h2>
+    <div class="timeline">
+      <p>🌸 Porque siempre me haces sonreír</p>
+      <p>💌 Porque me escuchas y me entiendes</p>
+      <p>✨ Porque eres mi paz y mi alegría</p>
+      <p>💍 Porque quiero un futuro contigo</p>
+    </div>
+  </section>
+  
+
+  <section>
+    <h2>Galería de Recuerdos 📸</h2>
+    <div class="gallery">
+      <img src="foto1.jpg" alt="Recuerdo 1" onclick="abrirCarta('foto1.jpg','Mi amor, este día fue inolvidable porque... 💕')">
+      <img src="foto2.jpg" alt="Recuerdo 2" onclick="abrirCarta('foto2.jpg','Cada vez que veo esta foto recuerdo lo feliz que soy contigo 🌹')">
+      <img src="foto3.jpg" alt="Recuerdo 3" onclick="abrirCarta('foto3.jpg','Eres mi mejor aventura ✨')">
+    </div>
+  </section>
+  
+  <!-- Carta (modal oculto al inicio) -->
+  <div id="carta" class="modal">
+    <div class="contenido-carta">
+      <span class="cerrar" onclick="cerrarCarta()">&times;</span>
+      <div class="texto-carta" id="textoCarta"></div>
+    </div>
+  </div>
+  
+
+
+
+  <section>
+    <h2>Un Mensaje para Ti 💌</h2>
+    <p>
+      Mi amor, gracias por estar siempre conmigo.  
+      Eres mi inspiración, mi alegría y mi hogar.  
+      Prometo amarte cada día un poquito más. 💕
+    </p>
+  </section>
+
+  <section>
+    <h2>Contador de Nuestro Amor ⏳</h2>
+    <div class="contador" id="contador"></div>
+  </section>
+
+  <footer>
+    <p>Con mucho amor, tuyo para siempre ❤️</p>
+  </footer>
+
+  <!-- Conectamos JS -->
+  <script src="script.js"></script>
+</body>
+</html>
